@@ -50,7 +50,7 @@ console.log(contactos);
 
 function borrarContacto(){
     let contactoAEliminar = prompt('Digite nombre y apellido que quiere eliminar');
-    while(!isNaN(contactoAEliminar) && !contactos.includes(contactoAEliminar)){
+    while(!isNaN(contactoAEliminar) || !contactos.includes(contactoAEliminar)){
         contactoAEliminar = prompt("¡Debes digitar el nombre y un apellido quiere eliminar correctamente!");
     }
     contactos =  contactos.filter(contacto => contacto != contactoAEliminar);
