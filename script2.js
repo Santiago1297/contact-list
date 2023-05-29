@@ -83,3 +83,26 @@ function borrarContacto(nombre){
 }
 // borrarContacto("Lina");
 // console.log(contactos);
+
+
+// Función actualizar contacto
+// Actualiza los datos del contacto por medio del id, se ponen los parámetros que hay en cada contacto y al llamar la función se reemplazan los datos según el id
+
+function actualizarContacto(id, nombre, apellidos, telefono, ciudad, direccion){
+    let indice = -1;
+    for (let i = 0; i < contactos.length && indice == -1; i++){
+        if(contactos[i].id === id){
+            indice = i;
+        }
+    }
+    if (indice!=-1){
+        contactos[indice].nombres = nombre;
+        contactos[indice].apellidos = apellidos;
+        contactos[indice].telefono = telefono;
+        contactos[indice].ubicaciones.ciudad = ciudad;
+        contactos[indice].ubicaciones.direccion = direccion;
+    }
+    return contactos; 
+}
+actualizarContacto(02, "Natalia", "Delgado", 3189012345, "Popayan", "Calle 12 #34a-50");
+console.log(contactos);
